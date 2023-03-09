@@ -1,0 +1,271 @@
+mixin product(filter, pid, link, sale, newProduct, percent, img, type, title, newPrice, oldPrice, value)   
+	article.product(data-pid= pid class= filter)
+		.product__content
+			.product__sales
+				.product__sale= sale
+				.product__new= newProduct
+				.product__percent= percent
+			a.product__image-ibg(href=link)
+				img.product__picture(src=img, alt="Мебель")
+			.product__tags
+				button.product__like._icon-heart(type="button")
+				a.product__shop._icon-shopping-bag(href="")
+				button.product__refresh._icon-refresh(type="button")
+				button.product__show._icon-eye(type="button")
+		.product__about
+			.product__type= type
+			h3.product__title= title
+			.product__body
+				.product__price
+					.product__new-price= newPrice
+					.product__old-price= oldPrice
+				.product__rating.rating.rating_set
+					.rating__body
+						.rating__active
+						.rating__items
+							input.rating__item(type="radio", value="1", name="rating")
+							input.rating__item(type="radio", value="2", name="rating")
+							input.rating__item(type="radio", value="3", name="rating")
+							input.rating__item(type="radio", value="4", name="rating")
+							input.rating__item(type="radio", value="5", name="rating")
+					.rating__value= value
+
+
+
+html
+	head
+		link(rel="stylesheet" href='css/style.min.css')
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+	body
+		wrapper.wrapper(data-sticky)
+			include html/header
+			main.main
+				section.main__advantages.advantages-main
+					.advantages-main__container
+						.advantages-main__item
+							.advantages-main__icon._icon-free-delivery
+							.advantages-main__body 
+								h3.advantages-main__title Free Shipping
+								.advantages-main__text Orders over $100
+						.advantages-main__item
+							.advantages-main__icon._icon-gift
+							.advantages-main__body 
+								h3.advantages-main__title Smart Gift Card
+								.advantages-main__text Buy $1000 to get card
+						.advantages-main__item
+							.advantages-main__icon._icon-wallet
+							.advantages-main__body 
+								h3.advantages-main__title Quick Payment
+								.advantages-main__text 100% secure payment
+						.advantages-main__item
+							.advantages-main__icon._icon-support
+							.advantages-main__body 
+								h3.advantages-main__title 24/7 Support
+								.advantages-main__text Quick support
+				section.main__collections.collections-main
+					.collections-main__container
+						.collections-main__column 
+							.collections-main__item-main
+								.collections-main__image-main 
+									img.collections-main__picture(src="@img/collections/1.jpg", alt="Мебель")
+								.collections-main__body
+									h3.collections-main__title Modern Furniture Collections
+									.collections-main__text Starting from $500
+									a.collections-main__more._icon-vector(href="404.html") Read more
+						.collections-main__column
+							.collections-main__item 
+								.collections-main__image 
+									img.collections-main__picture(src="@img/collections/2.jpg", alt="Мебель")
+								.collections-main__body
+									h3.collections-main__title Geometric Bookcase
+									.collections-main__text Up to 20% discount
+									a.collections-main__more._icon-vector(href="404.html") Read more
+							.collections-main__item 
+								.collections-main__image 
+									img.collections-main__picture(src="@img/collections/3.jpg", alt="Мебель")
+								.collections-main__body
+									h3.collections-main__title Minimal Sofa collections 
+									.collections-main__text Sale upto 40% discount
+									a.collections-main__more._icon-vector(href="404.html") Read more
+				section.main__trending.trending-main
+					.trending-main__container._container 
+						.trending-main__top
+							h2.trending-main__title TRENDING
+							ul.trending-main__list 
+								li.trending-main__item._checked(data-filter="top") Top Products
+								li.trending-main__item(data-filter="new") New Arrivals
+								li.trending-main__item(data-filter="best") Best Sellers
+						.trending-main__slider
+							.trending-main__swiper
+								.trending-main__slide
+									.trending-main__body 
+										+product("new", "1", "404.html", "", "New", "", "img/products/chair1.jpg", "chair", "Minimal LCD chair", "$180", "$250", "5")
+										+product("new", "2", "404.html", "", "New", "", "img/products/chair2.jpg", "chair", "Minimal iconic chair", "$120", "$150", "4")
+										+product("best", "3", "404.html", "Sale", "", "", "img/products/chair3.jpg", "chair", "Dining chairs", "$100", "$120", "5")
+										+product("best", "4", "404.html", "Sale", "", "", "img/products/chair4.jpg", "chair", "Buskbo armchair", "$130", "$150", "4")
+										+product("best", "5", "404.html", "Sale", "", "", "img/products/chair5.jpg", "chair", "Modern chairs", "$100", "$200", "0")
+										+product("best", "6", "404.html", "Sale", "", "", "img/products/chair6.jpg", "chair", "Plastic dining chair", "$130", "$150", "4")
+										+product("new", "7", "404.html", "", "New", "", "img/products/chair7.jpg", "chair", "Minimal Wood chair", "$180", "$250", "5")
+										+product("new", "8", "404.html", "", "New", "", "img/products/chair8.jpg", "chair", "Elegent wood chair", "$120", "$150", "4")
+								.trending-main__slide
+									.trending-main__body 
+										+product("new", "1", "404.html", "", "New", "", "img/products/chair1.jpg", "chair", "Minimal LCD chair", "$180", "$250", "5")
+										+product("new", "2", "404.html", "", "New", "", "img/products/chair2.jpg", "chair", "Minimal iconic chair", "$120", "$150", "4")
+										+product("best", "3", "404.html", "Sale", "", "", "img/products/chair3.jpg", "chair", "Dining chairs", "$100", "$120", "5")
+										+product("best", "4", "404.html", "Sale", "", "", "img/products/chair4.jpg", "chair", "Buskbo armchair", "$130", "$150", "4")
+										+product("best", "5", "404.html", "Sale", "", "", "img/products/chair5.jpg", "chair", "Modern chairs", "$100", "$200", "0")
+										+product("best", "6", "404.html", "Sale", "", "", "img/products/chair6.jpg", "chair", "Plastic dining chair", "$130", "$150", "4")
+										+product("new", "7", "404.html", "", "New", "", "img/products/chair7.jpg", "chair", "Minimal Wood chair", "$180", "$250", "5")
+										+product("new", "8", "404.html", "", "New", "", "img/products/chair8.jpg", "chair", "Elegent wood chair", "$120", "$150", "4")
+							.trending-main__dotts.swiper-pagination
+				section.main__offer.offer-main
+					.offer-main__container
+						h2.offer-main__title SPECIAL OFFER
+						.offer-main__body 
+							.offer-main__item 
+								.offer-main__image-ibg
+									img.offer-main__picture(src="@img/offer/1.jpg", alt="Стул")
+								.offer-main__content
+									h3.offer-main__subtitle Living Room Furniture
+									.offer-main__text You don't have a chair. Are you ready for growth? Shop with us 40% discount!
+									.offer-main__about
+										.offer-main__price 
+											.offer-main__new-price $150
+											.offer-main__old-price $250
+										a.offer-main__button(href="404.html") SHOP NOW
+									.offer-main__tags 
+										.offer-main__tag
+											span.offer-main__span 10
+											.offer-main__unit Days
+										.offer-main__tag
+											span.offer-main__span 15
+											.offer-main__unit HRS
+										.offer-main__tag
+											span.offer-main__span 30
+											.offer-main__unit MIN
+										.offer-main__tag
+											span.offer-main__span 22
+											.offer-main__unit secs
+								.offer-main__sales 40% off
+							.offer-main__item 
+								.offer-main__image-ibg
+									img.offer-main__picture(src="@img/offer/2.jpg", alt="Стул")
+								.offer-main__content
+									h3.offer-main__subtitle Modern chair
+									.offer-main__text Hot chairs of the modern era are now available in our stock.
+									.offer-main__about
+										.offer-main__price 
+											.offer-main__new-price $75
+											.offer-main__old-price $150
+										a.offer-main__button(href="404.html") SHOP NOW
+									.offer-main__tags 
+										.offer-main__tag
+											span.offer-main__span 10
+											.offer-main__unit Days
+										.offer-main__tag
+											span.offer-main__span 15
+											.offer-main__unit HRS
+										.offer-main__tag
+											span.offer-main__span 30
+											.offer-main__unit MIN
+										.offer-main__tag
+											span.offer-main__span 22
+											.offer-main__unit secs
+								.offer-main__sales 50% off
+				section.main__products.products-main
+					.products-main__container._container 
+						.products-main__top
+							h2.products-main__title OUR PRODUCTS
+							ul.products-main__list 
+								li.products-main__item._checked(data-filter="all") All Products
+								li.products-main__item(data-filter="best") Best Sellers
+								li.products-main__item(data-filter="new") New Arrivals
+								li.products-main__item(data-filter="today") Todays Deals
+						.products-main__body 
+							+product("best", "9", "404.html", "Sale", "", "", "img/products/chair9.jpg", "chair", "Minimal LCD chair", "$180", "$250", "5")
+							+product("new", "10", "404.html", "", "New", "", "img/products/sofa1.jpg", "sofa", "Modern Sofa", "$120", "$150", "4")
+							+product("today", "11", "404.html", "", "", "-30%", "img/products/sofa2.jpg", "sofa", "Microfiber Sofa", "$180", "$250", "4")
+							+product("best", "12", "404.html", "Sale", "", "", "img/products/table1.jpg", "table", "Wood Coffee Tables", "$100", "$120", "5")
+							+product("today", "13", "404.html", "", "", "-30%", "img/products/chair10.jpg", "chair", "Acacia Wood Club Chairs", "$100", "$120", "0")
+							+product("best", "14", "404.html", "Sale", "", "", "img/products/bench1.jpg", "Bench", "Amalia Cowhide Bench", "$130", "$150", "4")
+							+product("new", "15", "404.html", "", "New", "", "img/products/storage1.jpg", "Storage", "Juno-Hinged Lid Storage", "$180", "$250", "5")
+							+product("new", "16", "404.html", "", "New", "", "img/products/furniture1.jpg", "Furniture", "Delicia 3 Piece Living Room", "$120", "$150", "4")
+						.products-main__pagination.pagination-products-main
+							.pagination-products-main__body
+								a.pagination-products-main__button._icon-vector(href="404.html") Next page
+								.pagination-products-main__pages 
+									.pagination-products-main__text Page
+									.pagination-products-main__current 
+										span 1
+									.pagination-products-main__all of 100
+									.pagination-products-main__vectors 
+										a.pagination-products-main__prev._icon-arrow-down(href="404.html")
+										a.pagination-products-main__next._icon-arrow-down(href="404.html")
+				section.main__reviews.reviews-main
+					.reviews-main__container 
+						h2.reviews-main__title What Our Customer Says
+						.reviews-main__slider
+								.reviews-main__swiper
+									.reviews-main__slide.slide-main-reviews
+										.slide-main-reviews__content 
+											.slide-main-reviews__avatar-ibg
+												img.slide-main-reviews__img(src="@img/reviews/1.png", alt="Аватар")
+											.slide-main-reviews__body 
+												blockquote.slide-main-reviews__text I like Furniking.com and as compared to other company it's polices and customers support is very good easy to reach., also many time they unable to delivered. The ultricies are pregnant while the quis is suspended. Risus commodo viverra maecenas accumsan lacus vel facilisist amet.
+												.slide-main-reviews__autor Angelina Joly
+												.slide-main-reviews__position Co-founder
+								.reviews-main__navigation 
+									.reviews-main__prev.swiper-button-prev
+									.reviews-main__next.swiper-button-next
+				section.main__articles.articles-main
+					.articles-main__container._container
+						h2.articles-main__title Our Latest Articles
+						.articles-main__body 
+							.articles-main__item 
+								.articles-main__image-ibg
+									img.articles-main__picture(src="@img/articles/1.jpg", alt="Картинка")
+								.articles-main__content 
+									.articles-main__top 
+										.articles-main__type
+											.articles-main__icon._icon-tag
+											.articles-main__text Furniture
+										.articles-main__date 23 September 2022
+									h3.articles-main__subtitle Begineer guide buying minimal sofa
+									a.articles-main__more(href="404.html") Read more
+							.articles-main__item 
+								.articles-main__image-ibg
+									img.articles-main__picture(src="@img/articles/2.jpg", alt="Картинка")
+								.articles-main__content 
+									.articles-main__top 
+										.articles-main__type
+											.articles-main__icon._icon-tag
+											.articles-main__text TABLE
+										.articles-main__date 23 September 2022
+									h3.articles-main__subtitle Buying best minimal computer table
+									a.articles-main__more(href="404.html") Read more
+							.articles-main__item 
+								.articles-main__image-ibg
+									img.articles-main__picture(src="@img/articles/3.jpg", alt="Картинка")
+								.articles-main__content 
+									.articles-main__top 
+										.articles-main__type
+											.articles-main__icon._icon-tag
+											.articles-main__text Bench
+										.articles-main__date 23 march 2022
+									h3.articles-main__subtitle How to choose best modern bench
+									a.articles-main__more(href="404.html") Read more
+							.articles-main__item 
+								.articles-main__image-ibg
+									img.articles-main__picture(src="@img/articles/4.jpg", alt="Картинка")
+								.articles-main__content 
+									.articles-main__top 
+										.articles-main__type
+											.articles-main__icon._icon-tag
+											.articles-main__text Chair
+										.articles-main__date 23 march 2022
+									h3.articles-main__subtitle Best Summer Outfit Style in this Country
+									a.articles-main__more(href="404.html") Read more
+								
+			include html/footer
+
+

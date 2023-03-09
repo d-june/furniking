@@ -1,0 +1,127 @@
+//====================================================================================================
+.body-footer {
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		gap: rem(40);
+		@include adaptiveValue("padding-bottom", 60, 20);
+		border-bottom: 1px solid #9696963b;
+		@media (max-width: $mobile) {
+			flex-direction: column;
+			justify-content: flex-start;
+			gap: rem(10);
+		}
+	}
+	&__about {
+		flex: 0 1 rem(318);
+		display: flex;
+		flex-direction: column;
+		gap: rem(15);
+		@media (max-width: $mobile) {
+			flex: 1 1 auto;
+			&:not(:last-child) {
+				margin-bottom: rem(20);
+			}
+		}
+	}
+}
+
+.about-footer {
+	&__logo {
+		max-width: rem(147);
+		@media (max-width: $mobile) {
+			max-width: rem(120);
+		}
+		img {
+			width: 100%;
+		}
+	}
+	&__text {
+		@include adaptiveValue("font-size", 16, 12);
+		line-height: 200%;
+
+	}
+	&__social {
+		display: flex;
+		flex-wrap: wrap;
+		gap: rem(15);
+
+	}
+	&__item {
+		@include adaptiveValue("font-size", 25, 18);
+		transition: color 0.3s ease 0s;
+		&:hover {
+			color: $greenColor;
+		}
+	}
+}
+
+.spoller-item-footer {
+	@include adaptiveValue("font-size", 18, 10);
+	letter-spacing: 0.01em;
+	line-height: 222%;
+	@media (max-width: $mobile) {
+		font-size: rem(18);
+	}
+	&__title {
+		font-weight: 600;
+		&:not(:last-child) {
+			margin-bottom: rem(10);
+		}
+		._spoller-init & {
+			display: flex;
+			width: 100%;
+			justify-content: flex-start;
+			align-items: center;
+			gap: rem(10);
+			&::after {
+				content: "\e900";
+				font-size: rem(12);
+				transition: transform 0.3s ease 0s;
+				@extend %ic;
+			}
+			&._spoller-active {
+				&::after {
+					transform: rotate(-180deg);
+				}
+			}
+		}
+	}
+}
+
+.menu-footer {
+	&__link {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+						
+.copy-footer {
+	padding: rem(34) rem(0);
+	display: flex;
+	justify-content: space-between;
+	gap: rem(20);
+	@media (max-width: $mobile) {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: rem(20) rem(0);
+		font-size: rem(12);
+	}
+	&__column {
+		display: flex;
+		gap: rem(52);
+		@media (max-width: $mobile) {
+			gap: rem(20);
+		}
+	}
+	&__item {
+		&:hover {
+			text-decoration: underline;
+		}
+
+	}
+}
+
+//====================================================================================================

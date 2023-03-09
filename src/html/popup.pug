@@ -1,0 +1,102 @@
+.popup#callback(aria-hidden="true")
+	.popup__wrapper 
+		.popup__content 
+			button.popup__close(data-close, type="button") 
+			.popup__body
+				h2.popup__title Спасибо
+				.popup__text Твое сообщение отправлено! Наши менеджеры свяжутся с тобой в ближайшее время
+				.popup__image 
+					img.popup__picture(src="@img/popup.png")
+
+.popup#login(aria-hidden="true")
+	.popup__wrapper 
+		.popup__content 
+			button.popup__close(data-close, type="button") 
+			.popup__body
+				h2.popup__title Демо-версия
+				.popup__text Введи свои данные для входа в Signy
+				form.popup__form.form-popup
+					ul.form-popup__list 
+						li.form-popup__item 
+							label.form-popup__label(for="mail") Электронная почта*:
+							input.form-popup__input(type="email", id="mail", placeholder="ivan@mail.com")
+						li.form-popup__item 
+							label.form-popup__label(for="password") Пароль*:
+							input.form-popup__input(type="password", id="password", placeholder="Введие пароль")
+						li.form-popup_item 
+							input.form-popup__submit.btn.btn-2(type="submit" data-popup="#welcome", value="Войти")
+
+.popup#welcome(aria-hidden="true")
+	.popup__wrapper 
+		.popup__content 
+			button.popup__close(data-close, type="button") 
+			.popup__body
+				h2.popup__title Добро пожаловать!
+				.popup__text С возвращением в Sygny!
+				.popup__image 
+					img.popup__picture(src="@img/popup.png")
+
+.popup#registration(aria-hidden="true")
+	.popup__wrapper 
+		.popup__content 
+			button.popup__close(data-close, type="button") 
+			.popup__body
+				h2.popup__title Демо-версия
+				.popup__text Заполни форму для регистрации в Signy
+				form.popup__form.form-popup
+					ul.form-popup__list 
+						li.form-popup__item 
+							label.form-popup__label(for="name") Имя*:
+							input.form-popup__input(type="text", id="mail", placeholder="Иван")
+						li.form-popup__item 
+							label.form-popup__label(for="mail") Электронная почта*:
+							input.form-popup__input(type="email", id="mail", placeholder="ivan@mail.com")
+						li.form-popup__item 
+							label.form-popup__label(for="phone") Телефон*:
+							input.form-popup__input(type="tel", id="phone", placeholder="+38 000 000 00 00")
+						li.form-popup__item 
+							label.form-popup__label(for="password") Пароль*:
+							input.form-popup__input(type="password", id="password", placeholder="Введие пароль")
+						li.form-popup_item 
+							input.form-popup__submit.btn.btn-2(type="submit" data-popup="#registration-ok", value="Зарегистрироваться")
+
+.popup#registration-ok(aria-hidden="true")
+	.popup__wrapper 
+		.popup__content 
+			button.popup__close(data-close, type="button") 
+			.popup__body
+				h2.popup__title Добро пожаловать!
+				.popup__text Ты зарегистрирован в Sygny!
+				.popup__image 
+					img.popup__picture(src="@img/popup.png")
+
+.popup#application(aria-hidden="true")
+	.popup__wrapper 
+		.popup__content 
+			button.popup__close(data-close, type="button") 
+			.popup__body
+				h2.popup__title Демо-версия
+				.popup__text Заполни форму и наши менеджеры свяжутся с тобой
+				form.popup__form.form-popup
+					ul.form-popup__list 
+						li.form-popup__item 
+							label.form-popup__label(for="name") Имя*:
+							input.form-popup__input(type="text", id="mail", placeholder="Иван")
+						li.form-popup__item 
+							label.form-popup__label(for="mail") Электронная почта*:
+							input.form-popup__input(type="email", id="mail", placeholder="ivan@mail.com")
+						li.form-popup__item 
+							label.form-popup__label(for="phone") Телефон*:
+							input.form-popup__input(type="tel", id="phone", placeholder="+38 000 000 00 00")
+						li.form-popup_item 
+							input.form-popup__submit.btn.btn-2(type="submit" data-popup="#callback", value="Отправить")
+
+.popup#subscribtion(aria-hidden="true")
+	.popup__wrapper 
+		.popup__content 
+			button.popup__close(data-close, type="button") 
+			.popup__body
+				h2.popup__title Спасибо за подписку!
+				.popup__text Теперь ты сможешь получать самые актуальные новости Sygny!
+				.popup__image 
+					img.popup__picture(src="@img/popup.png")
